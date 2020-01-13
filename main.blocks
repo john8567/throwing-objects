@@ -1,0 +1,85 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="@I?:Bp)evdn}[4k{q^W(">Player</variable><variable type="KIND_SpriteKind" id="Aco*4W^6x:3!dzhVS)Uf">Projectile</variable><variable type="KIND_SpriteKind" id="]ctY@1dUy{*V,~;OJ.sP">Food</variable><variable type="KIND_SpriteKind" id="J(cL7-7SB=t9m*S,5~|(">Enemy</variable><variable id="4I,DMy@iiL4rVU0G_5J%">mySprite</variable><variable id="ZK$bO4-v8GD.zeveLxW%">hero-awsome</variable><variable id="}RU|FpE`{?:-g1;!fWn2">projectile</variable><variable id="[aN5ziM$]ZNM?9W{WvZS">Cloud</variable><variable id="quN)i8}Y9XY,pgW~|eG?">Rain</variable><variable id=";3o/s/GnBYg5YiN5dgN`">p</variable></variables><block type="function_definition" x="-850" y="-730"><mutation name="hero" functionid="T06;*gm6C%?p4-~3Tk/]"/><field name="function_name">hero</field><statement name="STACK"><block type="variables_set"><field name="VAR" id="ZK$bO4-v8GD.zeveLxW%">hero-awsome</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . f f f f f f . . . . . . 
+. . . f 2 2 2 2 2 2 f . . . . . 
+. . f 2 2 2 2 2 2 2 2 f . . . . 
+. f 2 2 2 2 2 2 2 2 2 2 f . . . 
+. f 2 f 2 2 2 2 f 2 2 2 f . . . 
+. f 2 2 f 2 2 f 2 2 2 2 f . . . 
+. f 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . f 2 2 2 2 2 f 2 2 2 f f . . 
+. . . f f f f f f 2 2 f 2 2 f . 
+. . f 2 2 2 2 2 2 f f 2 2 2 2 f 
+. f 2 2 2 2 2 f f f 2 2 2 2 f f 
+f 2 2 2 2 2 2 f f f 2 2 2 f . . 
+f 2 2 2 2 2 2 2 f 2 2 2 2 f . . 
+f f 2 2 2 2 2 2 2 2 2 2 f f . . 
+. f f 2 2 2 2 2 2 2 2 2 f . . . 
+. . f f f f f f f f f f . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="spritesetpos"><value name="sprite"><block type="variables_get"><field name="VAR" id="ZK$bO4-v8GD.zeveLxW%">hero-awsome</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">126</field></shadow></value><value name="y"><shadow type="positionPicker"><field name="index">89</field></shadow></value><next><block type="game_control_sprite"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get"><field name="VAR" id="ZK$bO4-v8GD.zeveLxW%">hero-awsome</field></block></value></block></next></block></next></block></statement></block><block type="gameOver" disabled="true" x="-170" y="-650"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="win"><shadow type="toggleWinLose"><field name="win">false</field></shadow></value></block><block type="function_definition" x="330" y="-610"><mutation name="score" functionid="1C(/.YOFru`*gF_LCT}R"/><field name="function_name">score</field><statement name="STACK"><block type="hudChangeScoreBy"><value name="value"><shadow type="math_number"><field name="NUM">1</field></shadow></value></block></statement></block><block type="function_definition" x="-800" y="-467"><mutation name="ball" functionid="2o0q+NL981mfAA[iA#D9"/><field name="function_name">ball</field><statement name="STACK"><block type="variables_set"><field name="VAR" id=";3o/s/GnBYg5YiN5dgN`">p</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreateprojectilefromsprite"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . b b b . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . b b f f f b . . . . . . 
+. . . . . . . . . . . . . . . . . b b b f f f 8 f f b . . . . . 
+. . . . . . . . . . . . . . . . b b f f f f f f 8 f a . . . . . 
+. . . . . . . . . . . . . . b b f f f f 2 e e e e 8 b a . . . . 
+. . . . . . . . . . . . b b b f f f f 2 f e e e 2 e f a . . . . 
+. . . . . . . . . . b b 8 f f f f f f e 2 2 2 2 2 e 8 f a . . . 
+. . . . . . . b b b 8 8 f f f f f f f e 2 2 2 2 2 e 8 8 a . . . 
+. . . . . . b b f 8 f f f f f f f f f b e 2 2 2 e b f 8 f a . . 
+. . . b b b f 8 8 f f f f f f f f f f f b e e e b f f 8 f a . . 
+. . b f 8 8 8 f f f f f f f f f f f f f f f f f f f f 8 8 a . . 
+8 8 8 8 8 f f f f f f f f f f f f f f f f f f f f f f 8 8 f a . 
+8 f f 8 8 8 8 8 8 f f f f f f f f f f f f f f f f f f f 8 f a . 
+8 8 f f f f f f f 8 8 8 8 8 f f f f f f f f f f f f f f 8 8 a . 
+8 8 8 8 8 8 8 f f f 8 8 f f 8 8 8 8 8 8 8 8 8 8 f f f f 8 8 b a 
+8 2 2 2 2 f 8 8 8 8 8 8 f f f f 8 8 f f f f f 8 8 8 f f 8 8 f a 
+8 2 2 2 2 2 2 2 2 2 2 2 f 8 8 8 8 8 8 8 8 f f f f f 8 8 8 8 f a 
+8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 a a a a a 8 f 8 f 8 a 
+8 8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 8 f f 8 a 
+8 f 8 8 f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 8 8 a 
+8 f f f f f 8 8 8 f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 8 a 
+8 2 2 2 2 2 f f f f f f 8 8 8 f 2 2 2 2 2 2 2 2 2 2 2 2 2 8 8 a 
+8 2 2 2 2 2 2 2 2 2 2 f f f f 8 8 8 8 8 f 2 2 2 2 2 2 2 2 8 f a 
+8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f f f f 8 8 8 8 8 8 f 2 8 f a 
+8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 8 8 8 8 8 8 f a 
+8 8 8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 8 f a 
+. . . 8 8 8 8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 f a 
+. . . . . . . 8 8 8 8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 8 f a 
+. . . . . . . . . . . 8 8 8 8 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f f a 
+. . . . . . . . . . . . . . . 8 8 8 8 2 2 2 2 2 2 2 2 2 8 f 8 a 
+. . . . . . . . . . . . . . . . . . . 8 8 8 8 2 2 2 2 2 f 8 a . 
+. . . . . . . . . . . . . . . . . . . . . . . 8 8 8 a a a a . . 
+`</field></shadow></value><value name="sprite"><block type="variables_get"><field name="VAR" id="ZK$bO4-v8GD.zeveLxW%">hero-awsome</field></block></value><value name="vx"><shadow type="spriteSpeedPicker"><field name="speed">0</field></shadow></value><value name="vy"><shadow type="spriteSpeedPicker"><field name="speed">-50</field></shadow></value></block></value></block></statement></block><block type="keyonevent" x="70" y="-510"><field name="button">controller.A</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="function_call"><mutation name="ball" functionid="2o0q+NL981mfAA[iA#D9"/></block></statement></block><block type="function_definition" x="-630" y="-350"><mutation name="cloud" functionid="e803oiFV4F$eV1YKb5r,"/><field name="function_name">cloud</field><statement name="STACK"><block type="variables_set"><field name="VAR" id="[aN5ziM$]ZNM?9W{WvZS">Cloud</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreateprojectilefromside"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . b b b b . . . 
+. . . . . . b b b 1 1 1 1 b . . 
+. . . . . . b 1 1 1 1 1 1 b . . 
+. . . . b b 1 1 1 1 1 b b 1 . . 
+. . . . b 1 1 1 1 1 1 b b 1 b . 
+. . . . 1 1 1 1 1 1 b b 1 b 1 . 
+. . . b 1 1 b b b b 1 1 b 1 1 . 
+. . b b 1 1 1 b 1 1 b 1 1 1 1 . 
+. b b 1 1 1 b b b b b b 1 1 1 1 
+. 1 1 1 1 1 1 1 b 1 b 1 1 1 b 1 
+. 1 b 1 1 1 b b 1 b 1 1 1 b b 1 
+1 b 1 1 1 1 b 1 1 b b b b b 1 1 
+1 1 b b b 1 1 b 1 1 b b b b 1 1 
+1 1 1 1 1 1 1 1 1 b b b b 1 1 . 
+. 1 1 1 1 b b b b b b b 1 1 . . 
+. . . . 1 1 1 1 1 1 1 1 . . . . 
+`</field></shadow></value><value name="vx"><shadow type="spriteSpeedPicker"><field name="speed">39</field></shadow></value><value name="vy"><shadow type="spriteSpeedPicker"><field name="speed">2</field></shadow></value></block></value></block></statement></block><block type="pxt-on-start" x="-850" y="-310"><statement name="HANDLER"><block type="function_call"><mutation name="hero" functionid="T06;*gm6C%?p4-~3Tk/]"/><next><block type="function_call"><mutation name="ball" functionid="2o0q+NL981mfAA[iA#D9"/><next><block type="function_call"><mutation name="score" functionid="1C(/.YOFru`*gF_LCT}R"/><next><block type="function_call"><mutation name="cloud" functionid="e803oiFV4F$eV1YKb5r,"/><next><block type="function_call"><mutation name="raindrop" functionid="!X@hF4rb4Ij(+^~{c;$5"/></block></next></block></next></block></next></block></next></block></statement></block><block type="function_definition" x="-590" y="-170"><mutation name="raindrop" functionid="!X@hF4rb4Ij(+^~{c;$5"/><field name="function_name">raindrop</field><statement name="STACK"><block type="variables_set"><field name="VAR" id="quN)i8}Y9XY,pgW~|eG?">Rain</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreateprojectilefromsprite"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 1 1 1 1 1 1 1 1 1 1 1 8 8 8 
+8 8 1 1 8 8 8 8 8 8 8 1 1 8 8 8 
+8 8 1 8 1 8 8 8 8 8 1 8 1 8 8 8 
+8 8 1 8 8 1 8 8 8 1 8 8 1 8 8 8 
+8 8 1 8 8 8 1 8 1 8 8 8 1 8 8 8 
+8 8 1 8 8 8 8 1 8 8 8 8 1 8 8 8 
+8 8 1 8 8 8 1 8 1 8 8 8 1 8 8 8 
+8 8 1 8 8 1 8 8 8 1 8 8 1 8 8 8 
+8 8 1 8 1 8 8 8 8 8 1 8 1 8 8 8 
+8 8 1 1 8 8 8 8 8 8 8 1 1 8 8 8 
+8 8 1 1 1 1 1 1 1 1 1 1 1 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+`</field></shadow></value><value name="sprite"><block type="variables_get"><field name="VAR" id="[aN5ziM$]ZNM?9W{WvZS">Cloud</field></block></value><value name="vx"><shadow type="spriteSpeedPicker"><field name="speed">100</field></shadow></value><value name="vy"><shadow type="spriteSpeedPicker"><field name="speed">100</field></shadow></value></block></value><next><block type="Sprite_blockCombine_change"><field name="property">Sprite.y@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="quN)i8}Y9XY,pgW~|eG?">Rain</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">3</field></shadow></value><next><block type="Sprite_blockCombine_change"><field name="property">Sprite.x@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="quN)i8}Y9XY,pgW~|eG?">Rain</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block></value></block></next></block></next></block></statement></block><block type="gameinterval" x="150" y="-130"><value name="period"><shadow type="timePicker"><field name="ms">100</field></shadow></value><statement name="HANDLER"><block type="function_call"><mutation name="raindrop" functionid="!X@hF4rb4Ij(+^~{c;$5"/></block></statement></block></xml>
